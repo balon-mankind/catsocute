@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>隨機貓咪圖片</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #fce4ec;
+      color: #4a148c;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+    h1 {
+      font-size: 3rem;
+      margin-top: 50px;
+    }
+    p {
+      font-size: 1.2rem;
+    }
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #ce93d8;
+      color: white;
+      text-decoration: none;
+      border-radius: 25px;
+      font-size: 1rem;
+      margin-top: 20px;
+      transition: background-color 0.3s;
+      cursor: pointer;
+    }
+    .button:hover {
+      background-color: #ab47bc;
+    }
+    .cute-image {
+      margin-top: 30px;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+<body>
+  <h1>隨機切換貓咪圖片！</h1>
+  <p>點擊按鈕來換一張可愛的貓咪圖片。</p>
+  <div class="button" onclick="changeImage()">點我換圖片</div>
+  <img src="cat1.png" alt="可愛的貓咪" class="cute-image" id="catImage">
+
+  <script>
+    // 定義圖片列表
+    const images = [
+      "./img/cat1.png", // 替換成你本地的圖片名稱
+      "./img/cat2.png",
+      "./img/cat3.png"
+    ];
+
+    // 隨機切換圖片
+    function changeImage() {
+      const image = document.getElementById("catImage");
+      const randomIndex = Math.floor(Math.random() * images.length);
+      image.src = images[randomIndex];
+    }
+  </script>
+</body>
+</html>
